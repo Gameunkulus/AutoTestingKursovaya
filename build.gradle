@@ -11,21 +11,29 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+allure {
+    version = '2.20.1'
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation group: 'com.codeborne', name: 'selenide', version: '6.12.2'
-    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.32'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation 'com.codeborne:selenide:6.12.2'
+    testImplementation 'com.ibm.icu:icu4j:72.1'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testCompileOnly 'org.projectlombok:lombok:1.18.26'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.32'
     testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 
 }
 
